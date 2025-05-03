@@ -8,15 +8,15 @@ now() - timedelta(days=1)은 현재시간보다 하루이전 값을 출력
 '''
 now = datetime.now()
 # print("now:", now)
-standardDay = now + timedelta(-5)
-# print("standardDay: ", standardDay)
+standardDay = now + timedelta(-1)
+print("standardDay: ", standardDay)
 KST = timezone(timedelta(hours=9))
 # time1 = datetime.datetime(now.year, now.month, now.day, now.hour, now.minute, now.second, now.microsecond, tzinfo=KST)
 # print("time1:", time1)
 # time2 = datetime.datetime(now.year, now.month, now.day, 18, 0, now.second, now.microsecond, tzinfo=KST)
 # print("time2:", time2)
-time3 = datetime(standardDay.year, standardDay.month, standardDay.day, standardDay.hour, standardDay.minute, standardDay.second, standardDay.microsecond, tzinfo=KST)
-# time3 = datetime(standardDay.year, standardDay.month, standardDay.day, 20, 45, standardDay.second, standardDay.microsecond, tzinfo=KST)
+# time3 = datetime(standardDay.year, standardDay.month, standardDay.day, standardDay.hour, standardDay.minute, standardDay.second, standardDay.microsecond, tzinfo=KST)
+time3 = datetime(standardDay.year, standardDay.month, standardDay.day, 0, 0, 0, tzinfo=KST)
 # print("time3:", time3)
 # formatedTime = now.strftime("%Y%m%d%H%M%S%M") #year-month-day-hour-minutes-sec-msec
 
@@ -26,6 +26,7 @@ numberlist = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
              31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
              41, 42, 43, 44, 45
             ]
+print(numberlist, "\n")
 
 # result = random.sample(numberlist, 1) # [n]
 result = []
@@ -40,15 +41,21 @@ while len(result) < 6:
 
     random.seed(int(seedValue))
 
-    temp = random.randint(0, len(numberlist))
-    value = numberlist[temp]
+    print("numberlist len()", len(numberlist))
+
+    temp = random.randint(0, len(numberlist) - 1)
     print("temp:", temp)
-    # print("value:", value)
+
+    value = numberlist[temp]    
+    print("value:", value)
+    
     result.append(value)
     numberlist.remove(value)
+    print(numberlist)
+
     count = count + 1
+    print("\n")
 
 
 result.sort()
-# print("seedValue:", seedValue)
 print("result:", result)
