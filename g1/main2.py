@@ -18,7 +18,7 @@ KST = timezone(timedelta(hours=9))
 # time3 = datetime(standardDay.year, standardDay.month, standardDay.day, standardDay.hour, standardDay.minute, standardDay.second, standardDay.microsecond, tzinfo=KST)
 time3 = datetime(standardDay.year, standardDay.month, standardDay.day, 0, 0, 0, tzinfo=KST)
 # print("time3:", time3)
-# formatedTime = now.strftime("%Y%m%d%H%M%S%M") #year-month-day-hour-minutes-sec-msec
+# formatedTime = now.strftime("%Y%m%d%H%M%S%f") #year-month-day-hour-minutes-sec-msec
 
 numberlist = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
              11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
@@ -37,7 +37,7 @@ count = 0
 #     seedTime = time3 + timedelta(count)
 #     print("seedTime:", seedTime)
 
-#     seedValue = seedTime.strftime("%Y%m%d%H%M%S%m")
+#     seedValue = seedTime.strftime("%Y%m%d%H%M%S%f")
 #     # print(seedValue)
 
 #     random.seed(int(seedValue))
@@ -57,7 +57,7 @@ count = 0
 #     count = count + 1
 #     print("\n")
 
-seedList = [5, 6, 4, 5, 8, 3]
+seedList = [920120, 930807, 931004, 940204, 930415, 930817]
 for x in seedList:
     random.seed(float(x))
     index = random.randint(0, len(numberlist) - 1)

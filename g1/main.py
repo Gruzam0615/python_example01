@@ -8,7 +8,7 @@ now() - timedelta(days=1)은 현재시간보다 하루이전 값을 출력
 '''
 now = datetime.now()
 # print("now:", now)
-standardDay = now + timedelta(-1)
+standardDay = now + timedelta(-5)
 print("standardDay: ", standardDay)
 KST = timezone(timedelta(hours=9))
 # time1 = datetime.datetime(now.year, now.month, now.day, now.hour, now.minute, now.second, now.microsecond, tzinfo=KST)
@@ -18,7 +18,7 @@ KST = timezone(timedelta(hours=9))
 # time3 = datetime(standardDay.year, standardDay.month, standardDay.day, standardDay.hour, standardDay.minute, standardDay.second, standardDay.microsecond, tzinfo=KST)
 time3 = datetime(standardDay.year, standardDay.month, standardDay.day, 0, 0, 0, tzinfo=KST)
 # print("time3:", time3)
-# formatedTime = now.strftime("%Y%m%d%H%M%S%M") #year-month-day-hour-minutes-sec-msec
+# formatedTime = now.strftime("%Y%m%d%H%M%S%f") #year-month-day-hour-minutes-sec-msec
 
 numberlist = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
              11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
@@ -36,8 +36,8 @@ while len(result) < 6:
     seedTime = time3 + timedelta(count)
     print("seedTime:", seedTime)
 
-    seedValue = seedTime.strftime("%Y%m%d%H%M%S%m")
-    # print(seedValue)
+    seedValue = seedTime.strftime("%Y%m%d%H%M%S%f")
+    print("seedValue: " + seedValue)
 
     random.seed(int(seedValue))
 
