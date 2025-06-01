@@ -57,7 +57,8 @@ count = 0
 #     count = count + 1
 #     print("\n")
 
-seedList = [920120, 930807, 931004, 940204, 930415, 930817]
+# seedList = [920120, 930807, 931004, 940204, 930415, 930817]
+seedList = [1, 2, 3, 4, 5, 6]
 for x in seedList:
     random.seed(float(x))
     index = random.randint(0, len(numberlist) - 1)

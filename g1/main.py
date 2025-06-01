@@ -8,7 +8,7 @@ now() - timedelta(days=1)은 현재시간보다 하루이전 값을 출력
 '''
 now = datetime.now()
 # print("now:", now)
-standardDay = now + timedelta(-5)
+standardDay = now + timedelta(0)
 print("standardDay: ", standardDay)
 KST = timezone(timedelta(hours=9))
 # time1 = datetime.datetime(now.year, now.month, now.day, now.hour, now.minute, now.second, now.microsecond, tzinfo=KST)
@@ -44,7 +44,7 @@ while len(result) < 6:
     print("numberlist len()", len(numberlist))
 
     temp = random.randint(0, len(numberlist) - 1)
-    print("temp:", temp)
+    print("index:", temp)
 
     value = numberlist[temp]    
     print("value:", value)
