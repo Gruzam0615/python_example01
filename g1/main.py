@@ -13,11 +13,14 @@ print("standardDay: ", standardDay)
 KST = timezone(timedelta(hours=9))
 # time1 = datetime.datetime(now.year, now.month, now.day, now.hour, now.minute, now.second, now.microsecond, tzinfo=KST)
 # print("time1:", time1)
+
 # time2 = datetime.datetime(now.year, now.month, now.day, 18, 0, now.second, now.microsecond, tzinfo=KST)
 # print("time2:", time2)
+
 # time3 = datetime(standardDay.year, standardDay.month, standardDay.day, standardDay.hour, standardDay.minute, standardDay.second, standardDay.microsecond, tzinfo=KST)
-time3 = datetime(standardDay.year, standardDay.month, standardDay.day, 0, 0, 0, tzinfo=KST)
-# print("time3:", time3)
+time3 = datetime(standardDay.year, standardDay.month, standardDay.day, 20, 49, 11, 22, tzinfo=KST)
+print("time3:", time3)
+
 # formatedTime = now.strftime("%Y%m%d%H%M%S%f") #year-month-day-hour-minutes-sec-msec
 
 numberlist = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
@@ -26,6 +29,12 @@ numberlist = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
              31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
              41, 42, 43, 44, 45
             ]
+
+excludeNumbers = [2, 4, 5, 6, 11, 17, 19, 20, 25, 32, 34, 36, 39]
+
+for x in excludeNumbers:
+    numberlist.remove(x)
+
 print(numberlist, "\n")
 
 # result = random.sample(numberlist, 1) # [n]
